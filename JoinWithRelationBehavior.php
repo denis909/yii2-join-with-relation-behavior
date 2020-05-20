@@ -13,7 +13,7 @@ class JoinWithRelationBehavior extends \yii\base\Behavior
 		{
 			foreach($name as $key => $value)
 			{
-				$this->joinWithRelation($name, $key);
+				$this->owner->joinWithRelation($name, $key);
 			}
 
 			return $this;
@@ -26,7 +26,7 @@ class JoinWithRelationBehavior extends \yii\base\Behavior
 
 		$this->_joinWithRelation[$name] = $key;
 
-		return $this->joinWith($key ? ($name . ' ' . $key) : $name);
+		return $this->owner->joinWith($key ? ($name . ' ' . $key) : $name);
 	}
 
 }
