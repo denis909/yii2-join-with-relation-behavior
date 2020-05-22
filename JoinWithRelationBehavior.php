@@ -16,12 +16,12 @@ class JoinWithRelationBehavior extends \yii\base\Behavior
 				$this->owner->joinWithRelation($name, $key);
 			}
 
-			return $this;
+			return $this->owner;
 		}
 
 		if (array_key_exists($name, $this->_joinWithRelation))
 		{
-			return $this;
+			return $this->owner;
 		}
 
 		$this->_joinWithRelation[$name] = $key;
